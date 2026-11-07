@@ -215,6 +215,18 @@
     grid-column: 1 / -1;
   }
 
+  .footer-links nav {
+    gap: 0.125rem;
+  }
+
+  .footer-links nav a,
+  .footer-top {
+    display: flex;
+    min-height: 2.75rem;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
   .footer-paper-fill {
     mask: none;
   }

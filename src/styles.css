@@ -620,8 +620,33 @@ html:has(.project-dialog[open]) {
 }
 
 @media (max-width: 44rem) {
+  .site-header {
+    top: max(0.75rem, env(safe-area-inset-top));
+    padding-inline: 0.75rem;
+  }
+
+  .site-nav {
+    grid-template-columns: auto repeat(3, minmax(0, 1fr)) auto;
+    gap: clamp(0.125rem, 0.8vw, 0.375rem);
+    width: min(100%, 27rem);
+  }
+
+  .nav-mark {
+    width: clamp(1.375rem, 5.5vw, 1.9rem);
+    margin-inline: 0.25rem;
+  }
+
+  .site-nav a {
+    padding-inline: 0.15rem;
+    font-size: clamp(0.75rem, 3.25vw, 0.9rem);
+  }
+
+  .site-nav .nav-contact {
+    padding-inline: clamp(0.55rem, 2vw, 0.875rem);
+  }
+
   .panel {
-    padding-block: 6.5rem 5.75rem;
+    padding-block: 5.75rem 4.5rem;
   }
 
   .panel-inner {
@@ -654,9 +679,23 @@ html:has(.project-dialog[open]) {
     gap: 1.75rem;
   }
 
+  .work-section,
+  .about-section {
+    min-height: auto;
+  }
+
   .project-stack {
     width: min(100%, 29rem);
     aspect-ratio: 1.11;
+  }
+
+  .project-card-face {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .project-card-label {
+    padding-inline: 0.5rem;
   }
 
   .project-detail {
@@ -673,7 +712,15 @@ html:has(.project-dialog[open]) {
   }
 
   .about-inner {
-    gap: 2rem;
+    gap: 1.75rem;
+  }
+
+  .about-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(4.5rem, 27vw, 9rem);
+    align-items: center;
+    gap: 0.85rem;
+    width: min(100%, 30rem);
   }
 
   .about-intro h2 {
@@ -682,15 +729,22 @@ html:has(.project-dialog[open]) {
     text-align: left;
   }
 
+  .about-intro p {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+
   .about-intro img {
-    width: min(65%, 13rem);
-    margin-top: 1.25rem;
+    grid-area: 1 / 2;
+    width: 100%;
+    margin-top: 0;
   }
 
   .id-card {
     justify-self: center;
+    font-size: 0.9375rem;
+    line-height: 1.45;
   }
-
 }
 
 @media (max-width: 26rem) {
