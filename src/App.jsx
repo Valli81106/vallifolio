@@ -11,8 +11,8 @@ function Navigation() {
       <nav className="site-nav" aria-label="Main navigation">
         <img className="nav-mark" src={logo} width="53" height="40" alt="" />
         <a href="#home">Home</a>
-        <a href="#work">Work</a>
         <a href="#about">About</a>
+        <a href="#work">Work</a>
         <a className="nav-contact" href="#contact">Let’s talk</a>
       </nav>
     </header>
@@ -60,11 +60,11 @@ export default function App() {
         <Hero />
         <PixelSeam from="blue" to="wine" />
         <WhatIDo />
+        <PixelSeam from="blue" to="blue" />
+        <About />
         <PixelSeam from="wine" to="blue" />
         <Work />
         <PixelSeam from="blue" to="wine" />
-        <About />
-        <PixelSeam from="blue" to="blue" />
         <Contact />
       </main>
       <PixelSeam from="wine" to="blue" />
