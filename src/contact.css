@@ -1,0 +1,235 @@
+.contact-section {
+  padding: clamp(6rem, 8.5vw, 8rem) var(--gutter) clamp(3.5rem, 6.3vw, 5.75rem);
+  color: var(--white);
+  background: var(--wine);
+}
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(4.5rem, 10vw, 8.5rem) minmax(0, 0.92fr);
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 4rem);
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
+.contact-copy h2 {
+  font-size: clamp(2.75rem, 7vw, 7rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.contact-copy p {
+  max-width: 20ch;
+  margin-top: clamp(1rem, 2.5vw, 1.75rem);
+  font-size: clamp(1.125rem, 2.15vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.mouth-frames {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+}
+
+.mouth-frames img {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: mouth-frame 1600ms step-end infinite;
+}
+
+.mouth-frames img + img {
+  animation-delay: -800ms;
+}
+
+@keyframes mouth-frame {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  border: 0;
+  padding: 0.7rem 1rem;
+  background: var(--blue);
+  color: var(--wine);
+  font: inherit;
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  min-width: 0;
+}
+
+.contact-form input,
+.contact-form button {
+  min-height: 2.75rem;
+  border-radius: 999px;
+}
+
+.contact-form textarea {
+  min-height: 7rem;
+  border-radius: 1.125rem;
+  resize: vertical;
+}
+
+.contact-form ::placeholder {
+  color: var(--wine);
+  opacity: 0.78;
+}
+
+.contact-form :is(input, textarea, button):focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+.contact-form button {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: var(--white);
+}
+
+.contact-note {
+  margin-top: -0.35rem;
+  color: var(--blue);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.footer-sheet,
+.footer-photo {
+  position: relative;
+}
+
+.footer-sheet {
+  background: var(--blue) url('/footer-photo.jpg') center 24% / cover no-repeat;
+}
+
+.footer-paper,
+.footer-photo svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: var(--blue);
+  pointer-events: none;
+}
+
+.footer-inner {
+  position: relative;
+  display: flex;
+  min-height: clamp(18rem, 26vw, 23rem);
+  max-width: calc(var(--content-width) + 2 * var(--gutter));
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-inline: auto;
+  padding: clamp(3.5rem, 5vw, 5rem) var(--gutter) 1.5rem;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: start;
+  gap: clamp(1.5rem, 5vw, 5.5rem);
+}
+
+.site-footer a {
+  width: fit-content;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.footer-name {
+  font-size: clamp(1.8rem, 4.1vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 1;
+}
+
+.footer-links nav {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.footer-links nav p {
+  margin-bottom: 0.25rem;
+}
+
+.footer-top {
+  align-self: end;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.footer-top span {
+  margin-inline-start: 0.3em;
+}
+
+.footer-photo img {
+  display: block;
+  width: 100%;
+  height: clamp(19rem, 32vw, 29rem);
+  object-fit: cover;
+  object-position: 50% 44%;
+}
+
+@media (max-width: 44rem) {
+  .contact-inner {
+    grid-template-columns: minmax(0, 1fr) clamp(4.5rem, 20vw, 7rem);
+    gap: 1.75rem 1rem;
+  }
+
+  .contact-form {
+    grid-column: 1 / -1;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-name {
+    grid-column: 1 / -1;
+  }
+
+  .footer-paper-fill {
+    mask: none;
+  }
+
+  .footer-photo svg {
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mouth-frames img {
+    animation: none;
+  }
+
+  .mouth-frames img + img {
+    visibility: hidden;
+  }
+}
